@@ -1,0 +1,24 @@
+#!/usr/bin/expect
+set timeout 60
+spawn "./doinstall"
+# Question 1
+expect "Please press RETURN to continue." {}
+sleep 2
+send "\n"
+# Question 2
+expect "In which directory do you want to install GNAT" {}
+sleep 2
+send "\n"
+# Question 3
+expect "Do you want to continue"
+sleep 2
+send "y\n"
+# Question 4
+expect "Do you want to proceed with installation"
+sleep 2
+send "y\n"
+# Wait end of processing
+sleep 3
+expect "Thank you for installing GNAT GPL Edition!"
+sleep 10
+
