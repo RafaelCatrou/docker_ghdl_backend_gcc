@@ -1,4 +1,4 @@
-# Docker: GHDL with GCC back
+# Docker: GHDL with GCC backend
 
 ### Table of Contents
 **[Goal](#goal)**  
