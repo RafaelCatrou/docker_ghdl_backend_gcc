@@ -23,8 +23,6 @@
 # --------------------------------------------------------------------------------------------------
 FROM ubuntu:16.04
 MAINTAINER Rafael Catrou <rafael@localhost>
-# Suppress debian front warnings from Ubuntu base image
-#RUN DEBIAN_FRONTEND=noninteractive
 
 RUN \
     apt-get update -y && \
@@ -99,15 +97,10 @@ RUN apt-get install -y gtkwave
 # --------------------------------------------------------------------------------------------------
 # Create folder + Upload .tar.gz of GNAT
 RUN mkdir -p /root/tools/gnat
-#COPY src/gnat-gpl-2016-x86_64-linux-bin.tar.gz /root/tools/gnat
 # Unzip
 WORKDIR /root/tools/gnat
-
-
 RUN wget http://mirrors.cdn.adacore.com/art/5739cefdc7a447658e0b016b
 RUN mv 5739cefdc7a447658e0b016b gnat-gpl-2016-x86_64-linux-bin.tar.gz
-
-
 
 RUN \
     tar -zxvf gnat-gpl-2016-x86_64-linux-bin.tar.gz && \
